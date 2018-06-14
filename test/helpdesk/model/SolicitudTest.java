@@ -24,13 +24,13 @@ public class SolicitudTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-    Conexion miConexion = new Conexion();
+    Conexion miConexion = Conexion.getInstanceConexion();
     miConexion.setBaseDatos("helpdesk");
     miConexion.setClave("22639443");
     miConexion.setPuerto("5432");
     miConexion.setServidor("192.168.4.26");
     miConexion.setUsuario("rcontreras");
-    miConexion.setConexion();
+    miConexion.abrirConexion();
     }
 
     @AfterClass

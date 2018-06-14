@@ -19,13 +19,13 @@ import helpdesk.model.data.*;
 public class TipoTramiteTest {
 
     public TipoTramiteTest() throws SQLException {
-    Conexion miConexion = new Conexion();
+    Conexion miConexion = Conexion.getInstanceConexion();
     miConexion.setBaseDatos("helpdesk");
     miConexion.setClave("22639443");
     miConexion.setPuerto("5432");
     miConexion.setServidor("localhost");
     miConexion.setUsuario("rcontreras");
-    miConexion.setConexion();
+    miConexion.abrirConexion();
     }
 
     @BeforeClass

@@ -23,13 +23,13 @@ public class TrabajadorInformaticaTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-    Conexion miConexion = new Conexion();
+    Conexion miConexion = Conexion.getInstanceConexion();
     miConexion.setBaseDatos("helpdesk");
     miConexion.setClave("22639443");
     miConexion.setPuerto("5432");
     miConexion.setServidor("localhost");
     miConexion.setUsuario("rcontreras");
-    miConexion.setConexion();
+    miConexion.abrirConexion();
     }
 
     @AfterClass

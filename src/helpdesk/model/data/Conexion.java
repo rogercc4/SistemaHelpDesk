@@ -23,11 +23,12 @@ private String clave;
 private String baseDatos;
 
 private static Connection miConexion;
+private static String urlConexion;
 
 /**
    * Constructor de la clase, primer método que se ejecutalocalhost al crear este objeto
    */
-  public Conexion() {
+  private Conexion() {
         try {
             Class.forName(nombreDriver);
         } catch (ClassNotFoundException ex) {
@@ -55,11 +56,11 @@ private static Connection miConexion;
   this.baseDatos = miBaseDatos.trim();
   }
 
-  public void setConexion() throws SQLException {
+  public void abrirConexion() throws SQLException {
 
       if ( miConexion == null ) {
       //final String url = "jdbc:postgresql://" + this.servidor + ":" + this.puerto + "/" + this.baseDatos + "&ssl=true";
-          final String url = "jdbc:postgresql://" + 
+          urlConexion = "jdbc:postgresql://" + 
                                 this.servidor + ":" + 
                                 this.puerto + "/" + 
                                 this.baseDatos + "?user=" + 
@@ -67,16 +68,26 @@ private static Connection miConexion;
                                 this.clave + "&ssl=true";
           
       //miConexion = DriverManager.getConnection(url, this.usuario, this.clave);
-          miConexion = DriverManager.getConnection(url);
+          miConexion = DriverManager.getConnection(urlConexion);
       }
   
   }
 
+  public static Conexion getInstanceConexion() {
+      return new Conexion();
+  }
     /**
     * Esta función devuelve la conexion a la base de datos
     */
   public static Connection getMiConexion() {
-  return miConexion;
+    try {
+        if ( miConexion == null || miConexion.isClosed() ) {
+            miConexion = DriverManager.getConnection(urlConexion);
+        }        
+    } catch (SQLException ex) {
+        Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+    }    
+    return miConexion;
   }
 
   /**

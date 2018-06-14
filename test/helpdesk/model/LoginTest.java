@@ -25,13 +25,13 @@ private static Conexion miConexion;
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-    miConexion = new Conexion();
+    miConexion = Conexion.getInstanceConexion();
     miConexion.setBaseDatos("helpdesk");
     miConexion.setClave("22639443");
     miConexion.setPuerto("5432");
     miConexion.setServidor("localhost");
     miConexion.setUsuario("rcontreras");
-    miConexion.setConexion();
+    miConexion.abrirConexion();
     }
 
     @AfterClass
