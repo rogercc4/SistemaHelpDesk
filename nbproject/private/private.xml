@@ -4,8 +4,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/TRABAJOS/SATCH/Aplicacion%20HelpDesk/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/data/ConsultaData.java</file>
-            <file>file:/D:/TRABAJOS/SATCH/Aplicacion%20HelpDesk/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/data/OperacionData.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/Area.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/Cargo.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/Trabajador.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/Categoria.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/TipoTramite.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/SubCategoria.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/GestorEnvioCorreo.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/Tramite.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/Activo.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/Solicitud.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/FormatoTramite.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/pattern/CargoFlyweightFactory.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/TipoSolicitud.java</file>
+            <file>file:/C:/Users/Roger/Documents/NetBeansProjects/Proyecto%20HelpDesk/SistemaHelpDesk/src/helpdesk/model/pattern/TrabajadorFlyweightFactory.java</file>
         </group>
     </open-files>
 </project-private>

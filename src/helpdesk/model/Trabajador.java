@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.*;
 import helpdesk.model.data.*;
+import helpdesk.model.pattern.TrabajadorFlyweightFactory;
 
 /** Representa a cualquier trabajador de la institución
  *
@@ -489,44 +490,7 @@ public class Trabajador {
     * @param usuario Nombre del usuario.
     * @pdOid 21a2e38b-6a6a-4635-9306-34e01fbafab5 */
    public static Trabajador getTrabajadorBD(String usuario) {
-      // TODO: implement
-
-       if ( usuario == null || usuario.trim().length() <= 0 ) return null;
-
-       usuario = usuario.trim();
-
-      String cadSql = "select anexousuario, apellido, correo, dni, nombre, usuario, cargo_id  "
-                    + "from trabajador where usuario='" + usuario + "'" ;
-
-      helpdesk.model.data.ConsultaData consulta = new helpdesk.model.data.ConsultaData(cadSql);
-
-       if ( consulta.getNumFilas() <= 0 ) return null;
-
-       Object[][] resultado = consulta.getResultados() ;
-
-       Trabajador miTrabajador = new Trabajador();
-
-       for ( Object[] fila : resultado  ) {
-
-           if ( fila[0] != null )
-           miTrabajador.setAnexo(fila[0].toString().trim());
-
-           miTrabajador.setApellido(fila[1].toString().trim());
-
-           miTrabajador.setCorreo(fila[2].toString().trim());
-
-           miTrabajador.setDni(fila[3].toString().trim());
-
-           miTrabajador.setNombre(fila[4].toString().trim());
-
-           miTrabajador.setUsuario(fila[5].toString().trim());
-
-           miTrabajador.setCargo( Cargo.getCargoBD(Integer.parseInt(fila[6].toString().trim())) );
-
-       }
-
-      return miTrabajador ;
-
+       return TrabajadorFlyweightFactory.getTrabajador(usuario);
    }
 
    /** Permite obtener el trabajador que lo esta remplazando de manera temporal.

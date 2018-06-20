@@ -6,6 +6,7 @@
 
 package helpdesk.model;
 
+import helpdesk.model.pattern.CargoFlyweightFactory;
 import java.util.*;
 
 /** @pdOid 5b282116-df28-4952-b47a-7e82d6ca3a49 */
@@ -79,33 +80,10 @@ public class Cargo {
    /** Obtener un cargo que se encuentra registrado en la base de datos
     *
     * @param codigo Código del cargo
+     * @return 
     * @pdOid 554ae19d-9bb1-487c-8fe6-86e1dd2a517d */
    public static Cargo getCargoBD(int codigo) {
-      // TODO: implement
-
-      Cargo miCargo = null ;
-
-      if ( codigo <= 0) return null;
-
-   String cadSql = "select cargo_id, nombre, area_id, jefe_area "
-                   + "from cargo where cargo_id = " + codigo ;
-
-   helpdesk.model.data.ConsultaData consulta = new helpdesk.model.data.ConsultaData(cadSql);
-
-      if ( consulta.getNumFilas() <= 0 ) return null ;
-
-   miCargo = new Cargo();
-
-   Object[][] resultados = consulta.getResultados() ;
-
-
-   miCargo.setArea(new Area( Integer.parseInt(resultados[0][2].toString()) ));
-   miCargo.setCodCargo(codigo);
-   miCargo.setJefe(Boolean.parseBoolean(resultados[0][3].toString()));
-   miCargo.setNombre(resultados[0][1].toString());
-
-   return miCargo;
-
+       return CargoFlyweightFactory.getCargo(codigo);
    }
 
    /** @pdOid 7fb55ba5-9398-4fc8-8ca1-a30d17359c72 */
