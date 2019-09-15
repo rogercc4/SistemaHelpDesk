@@ -12,6 +12,11 @@ import java.util.*;
  *
  * @pdOid b02b7f80-77a7-463b-8a00-4634289250f2 */
 public class Activo {
+   
+      /** Código del activo.
+    *
+    * @pdOid 0c9c04e1-3f74-4f06-9d29-bf7eaa60b946 */
+   private int codigo2;
    /** Nombre del activo
     *
     * @pdOid 657ae72b-070c-439b-8e90-f3a99c1bfbb1 */
